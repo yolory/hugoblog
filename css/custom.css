@@ -1,0 +1,40 @@
+/* ----------------------------
+   PaperMod 自定义 CSS
+   功能：文章段落首行缩进两个汉字宽
+   适配暗黑模式和未来文章
+   ---------------------------- */
+
+/* 文章页段落强制首行缩进 */
+main .entry-content p,
+main .entry-content p * {
+    display: block !important;       /* 确保 text-indent 生效 */
+    text-indent: 2.5em !important;   /* 约两个汉字宽 */
+    margin-top: 0.8em;               /* 段落上间距，可调 */
+    margin-bottom: 0.8em;            /* 段落下间距，可调 */
+    line-height: 1.8;                /* 行高，可根据喜好调整 */
+}
+
+/* 暗黑模式下也生效 */
+.dark main .entry-content p,
+.dark main .entry-content p * {
+    display: block !important;
+    text-indent: 2.5em !important;
+}
+
+/* 保持首段段落标题下段落单独处理 */
+main .entry-content > p:first-of-type {
+    text-indent: 2.5em !important;
+}
+
+/* 列表、引用不缩进，保持主题原样 */
+.entry-content ul,
+.entry-content ol,
+.entry-content blockquote {
+    text-indent: 0 !important;
+}
+
+/* 保持代码块高亮、复制按钮等功能不受影响 */
+pre {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
